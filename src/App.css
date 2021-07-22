@@ -27,7 +27,7 @@
   overscroll-behavior: contain;
   height: 100vh;
 }
-.netex_title {
+.netexTitle {
   padding: 5px;
   background-color: #ededed;
   font-size: 12px;
@@ -35,176 +35,173 @@
   font-weight: 700;
 }
 .introduction {
-  margin: 12px 0px
+  margin: 12px 0px;
 }
-.sidebar_link: {
-    color: "#212121";
-    textDecoration: "none";
-    cursor: "pointer";
-    marginLeft: "10px";
-    "&:hover": {
-      textDecoration: "underline";
-    };
-  };
-  GET: {
-    fontSize: "9px";
-    lineHeight: "10px";
-    fontWeight: 700;
-    minWidth: "30px";
-    textAlign: "right";
-    color: "#0cbb52";
-  };
-  POST: {
-    fontSize: "9px";
-    lineHeight: "10px";
-    fontWeight: 700;
-    minWidth: "30px";
-    textAlign: "right";
-    color: "#ffb400";
-  };
-  flexStart: {
-    display: "flex";
-    alignItems: "center";
-    justifyContent: "flex-start";
-    minHeight: "30px";
-  };
-  sectionWrapper: {
-    padding: "35px 20px";
-    borderBottom: "1px solid #ECECEC";
-  };
-  title: {
-    fontSize: "36px";
-    fontWeight: 400;
-    color: "#282828";
-  };
-  apiURL: {
-    display: "inline-block";
-    wordBreak: "breaAll";
-    border: "1px solid #e6e6e6";
-    padding: "6px 10px";
-    borderRadius: "3px";
-    fontSize: "12px";
-    color: "#282828";
-    backgroundColor: "#f8f8f8";
-    margin: "5px 0px 15px";
-    width: "100%";
-  };
-  raw: {
-    display: "flex";
-    wordBreak: "break-word";
-    marginTop: "15px";
-  };
-  headers: {
-    color: "#212121";
-    fontSize: "16px";
-    borderBottom: "1px solid #ECECEC";
-    fontWeight: 700;
-  };
-  header: {
-    fontSize: "12px";
-    color: "#282828";
-    fontWeight: 700;
-    marginRight: "16px";
-    paddingRight: "10px";
-    lineHeight: "24px";
-    width: "25%";
-  };
-  headerValue: {
-    fontSize: "12px";
-    color: "#282828";
-    fontWeight: 400;
-    overflowWrap: "break-word";
-    wordBreak: "break-word";
-    lineHeight: "24px";
-    width: "75%";
-  };
-  exampleWrapper: {
-    maxWidth: "100%";
-    paddingTop: "10px";
-  };
-  exampleRequest: {
-    fontSize: "12px";
-    color: "#808080";
-    height: "32px";
-    lineHeight: "32px";
-    display: "inline-block";
-    marginLeft: "16px";
-    whiteSpace: "nowrap";
-  };
-  exampleTitle: {
-    float: "right";
-    width: "400px";
-    fontSize: "12px";
-    color: "#ffffff";
-    lineHeight: "32px";
-    display: "inline-block";
-    marginRight: "16px";
-    paddingLeft: "60px";
-    whiteSpace: "nowrap";
-    wordBreak: "break-word";
-    textOverflow: "ellipsis";
-    overflow: "hidden";
-    textAlign: "right";
-    flex: "1 1 0%";
-  };
-  exampleCodeWrapper: {
-    maxWidth: "100%";
-    width: "100%";
-    position: "relative";
-    maxHeight: "200px";
-    backgroundColor: "transparent";
-    borderRadius: "2px";
-  };
-  .view_more: {
-    position: "absolute";
-    width: "100%";
-    height: "100%";
-    backgroundColor: "transparent";
-  }
-  .view_more div {
-      bottom: "10px";
-      left: "50%";
-      transform: "translateX(-50%)";
-      zIndex: "1";
-      width: "120px";
-      height: "32px";
-      cursor: "pointer";
-      fontFamily: "Roboto";
-      fontStyle: "normal";
-      fontWeight: 600;
-      fontSize: "14px";
-      lineHeight: "32px";
-      position: "absolute";
-      borderRadius: "50px";
-      textAlign: "center";
-      color: "rgb(171, 171, 171)";
-      background: "rgb(70, 70, 70)";
-    }
-  pre: {
-    direction: "ltr";
-    textAlign: "left";
-    whiteSpace: "pre";
-    wordSpacing: "normal";
-    wordBreak: "normal";
-    overflowWrap: "normal";
-    lineHeight: "1.5";
-    tabSize: "4";
-    hyphens: "none";
-    color: "#f8f8f8";
-    background: "#272822";
-    height: "100%";
-    margin: "0px";
-    fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace';
-    padding: "16px !important";
-    backgroundColor: "#00000099 !important";
-    borderRadius: "0px !important";
-    border: "0px !important";
-    fontSize: "12px !important";
-    lineHeight: "18px !important";
-  };
-  .constant: {
-    color: "#f92672";
-  };
-  .string: {
-    color: "#a6e22e";
-  };
+.sidebarLink {
+  color: #212121;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.sidebarLink:hover {
+  text-decoration: underline;
+}
+.GET,
+.POST {
+  font-size: 9px;
+  line-height: 10px;
+  font-weight: 700;
+  min-width: 30px;
+  text-align: right;
+}
+.GET {
+  color: #0cbb52;
+}
+.POST {
+  color: #ffb400;
+}
+.flexStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 30px;
+}
+.sectionWrapper {
+  padding: 35px 20px;
+  border-bottom: 1px solid #ececec;
+}
+.title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #282828;
+}
+.apiURL {
+  display: inline-block;
+  word-break: breaAll;
+  border: 1px solid #e6e6e6;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #282828;
+  background-color: #f8f8f8;
+  margin: 5px 0px 15px;
+  width: 100%;
+}
+.raw {
+  display: flex;
+  word-break: break-word;
+  margin-top: 15px;
+}
+.headers {
+  color: #212121;
+  font-size: 16px;
+  border-bottom: 1px solid #ececec;
+  font-weight: 700;
+}
+.header {
+  font-size: 12px;
+  color: #282828;
+  font-weight: 700;
+  margin-right: 16px;
+  padding-right: 10px;
+  line-height: 24px;
+  width: 25%;
+}
+.headerValue {
+  font-size: 12px;
+  color: #282828;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 24px;
+  width: 75%;
+}
+.exampleWrapper {
+  max-width: 100%;
+  padding-top: 10px;
+}
+.exampleRequest {
+  font-size: 12px;
+  color: #808080;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  margin-left: 16px;
+  white-space: nowrap;
+}
+.exampleTitle {
+  width: 400px;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 32px;
+  display: inline-block;
+  margin-right: 16px;
+  padding-left: 60px;
+  white-space: nowrap;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: right;
+  flex: 1 1 0%;
+}
+.exampleCodeWrapper {
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  max-height: 200px;
+  background-color: transparent;
+  border-radius: 2px;
+}
+.viewMore {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.viewMore div {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 120px;
+  height: 32px;
+  cursor: pointer;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 32px;
+  position: absolute;
+  border-radius: 50px;
+  text-align: center;
+  color: rgb(171, 171, 171);
+  background: rgb(70, 70, 70);
+}
+pre {
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  color: #f8f8f8;
+  background: #272822;
+  height: 100%;
+  margin: 0px;
+  font-family: "Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace";
+  padding: 16px !important;
+  background-color: #00000099 !important;
+  border-radius: 0px !important;
+  border: 0px !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+}
+.constant {
+  color: #f92672;
+}
+.string {
+  color: #a6e22e;
+}

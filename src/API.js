@@ -1,63 +1,60 @@
 import React from "react";
-import logo from "assets/logo-dark.svg";
+import logo from "./assets/logo-dark.svg";
 import { Link } from "react-scroll";
+import "./App.css";
 
 export default function API() {
   return (
     <div className='api'>
-      <AppBar elevation={3} style={{ backgroundColor: "#fff" }}>
-        <Toolbar style={{ paddingTop: "16px", marginBottom: "16px" }}>
-          <img src={logo} width='170' height='55' alt='' />
-        </Toolbar>
-      </AppBar>
-      <Grid container spacing={0} className={classes.container}>
-        <Grid item xs={2} className={classes.sideBar}>
-          <div className={classes.netex}>NETEX KASSA API</div>
-          <div className={classes.introduction}>
-            <Link to='E01' smooth className={classes.sidebarLink}>
+      <div className='appBar'>
+        <img src={logo} width='170' height='55' alt='' />
+      </div>
+      <div className='container'>
+        <div className='sideBar'>
+          <div className='netex'>NETEX KASSA API</div>
+          <div className='introduction'>
+            <Link to='E01' smooth className='sidebarLink'>
               Introduction
             </Link>
           </div>
-          <div className={classes.flexStart}>
-            <span className={classes.GET}>GET</span>
-            <Link to='E01' smooth className={classes.sidebarLink}>
+          <div className='flexStart'>
+            <span className='GET'>GET</span>
+            <Link to='E01' smooth className='sidebarLink'>
               Get balance
             </Link>
           </div>
-          <div className={classes.flexStart}>
-            <span className={classes.GET}>GET</span>
-            <Link to='E02' smooth className={classes.sidebarLink}>
+          <div className='flexStart'>
+            <span className='GET'>GET</span>
+            <Link to='E02' smooth className='sidebarLink'>
               Get available methods
             </Link>
           </div>
-          <div className={classes.flexStart}>
-            <span className={classes.POST}>POST</span>
-            <Link to='E03' smooth className={classes.sidebarLink}>
+          <div className='flexStart'>
+            <span className='POST'>POST</span>
+            <Link to='E03' smooth className='sidebarLink'>
               Create invoce
             </Link>
           </div>
-          <div className={classes.flexStart}>
-            <span className={classes.POST}>POST</span>
-            <Link to='E04' smooth className={classes.sidebarLink}>
+          <div className='flexStart'>
+            <span className='POST'>POST</span>
+            <Link to='E04' smooth className='sidebarLink'>
               Get history
             </Link>
           </div>
-        </Grid>
-        <Grid item xs={10}>
+        </div>
+        <div item xs={10}>
           {dataEndpoints.map((api, index) => (
-            <section className={classes.section} id={api.id}>
+            <section className='section' id={api.id}>
               <div style={{ width: "50%" }}>
                 {index === 0 && (
-                  <div className={classes.sectionWrapper}>
-                    <p className={classes.title}>Netex Kassa API</p>
+                  <div className='sectionWrapper'>
+                    <p className='title'>Netex Kassa API</p>
                   </div>
                 )}
-                <div className={classes.sectionWrapper} key={api.title}>
-                  <div className={classes.flexStart}>
+                <div className='sectionWrapper' key={api.title}>
+                  <div className='flexStart'>
                     <span
-                      className={
-                        api.type === "GET" ? classes.GET : classes.POST
-                      }
+                      className={api.type === "GET" ? "GET" : "POST"}
                       style={{ fontSize: "16px" }}
                     >
                       {api.type}
@@ -73,28 +70,28 @@ export default function API() {
                       {api.title}
                     </p>
                   </div>
-                  <div className={classes.apiURL}>{api.endpoint}</div>
-                  <p className={classes.headers}>HEADERS</p>
+                  <div className='apiURL'>{api.endpoint}</div>
+                  <p className='headers'>HEADERS</p>
                   {api.headers.map((header) => (
-                    <div className={classes.raw} key={header.name}>
-                      <div className={classes.header}>{header.name}</div>
-                      <div className={classes.headerValue}>
+                    <div className='raw' key={header.name}>
+                      <div className='header'>{header.name}</div>
+                      <div className='headerValue'>
                         <div>{header.value}</div>
                       </div>
                     </div>
                   ))}
                   {api.type === "POST" && (
                     <>
-                      <p className={classes.headers}>
+                      <p className='headers'>
                         BODY{" "}
                         <span style={{ fontWeight: 400, color: "#666666" }}>
                           urlencoded
                         </span>
                       </p>
                       {api.body.map((item) => (
-                        <div className={classes.raw} key={item.name}>
-                          <div className={classes.header}>{item.name}</div>
-                          <div className={classes.headerValue}>
+                        <div className='raw' key={item.name}>
+                          <div className='header'>{item.name}</div>
+                          <div className='headerValue'>
                             <div>{item.value}</div>
                             {item.optional && (
                               <span style={{ fontSize: "12px", color: "grey" }}>
@@ -110,26 +107,24 @@ export default function API() {
               </div>
               <div style={{ width: "50%" }}>
                 {index === 0 && <div style={{ height: "194px" }}></div>}
-                <div className={classes.exampleWrapper}>
+                <div className='exampleWrapper'>
                   <div>
                     <div style={{ boxSizing: "border-box" }}>
                       <div style={{ display: "flex", padding: "8px 0px" }}>
-                        <div className={classes.exampleRequest}>
-                          Example Request
-                        </div>
-                        <div className={classes.exampleTitle}>{api.title}</div>
+                        <div className='exampleRequest'>Example Request</div>
+                        <div className='exampleTitle'>{api.title}</div>
                       </div>
                       <div style={{ position: "relative" }}>
-                        <div className={classes.exampleCodeWrapper}>
+                        <div className='exampleCodeWrapper'>
                           {api.type === "POST" && (
-                            <div className={classes.viewMore}>
+                            <div className='viewMore'>
                               <div>View More</div>
                             </div>
                           )}
                           <div style={{ maxHeight: "200px", height: "100%" }}>
                             <div style={{ height: "100%" }}>
                               <pre
-                                className={classes.pre}
+                                className='pre'
                                 style={{
                                   overflow:
                                     api.type === "GET"
@@ -137,19 +132,17 @@ export default function API() {
                                       : "hidden",
                                 }}
                               >
-                                <code className={classes.code}>
+                                <code className='code'>
                                   curl --location --request{" "}
-                                  <span className={classes.constant}>
-                                    {api.type}
-                                  </span>{" "}
-                                  <span className={classes.string}>
+                                  <span className='constant'>{api.type}</span>{" "}
+                                  <span className='string'>
                                     "{api.endpoint}"
                                   </span>{" "}
                                   \<br />
                                   {api.headers.map((header) => (
                                     <>
                                       --header{" "}
-                                      <span className={classes.string}>
+                                      <span className='string'>
                                         '{header.name}:{" "}
                                         {header.value.split(/[\s,]+/).join(" ")}
                                         '
@@ -161,7 +154,7 @@ export default function API() {
                                     api.body.map((item) => (
                                       <>
                                         --data-urlencode{" "}
-                                        <span className={classes.string}>
+                                        <span className='string'>
                                           '{item.name}={item.value}'
                                         </span>{" "}
                                         \<br />
@@ -179,8 +172,8 @@ export default function API() {
               </div>
             </section>
           ))}
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </div>
   );
 }
@@ -283,4 +276,3 @@ const dataEndpoints = [
     ],
   },
 ];
-
