@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./assets/logo-dark.svg";
 import { Link } from "react-scroll";
 import "./App.css";
 
 export default function API() {
+  const [open, setOpen] = useState(false);
+  const [currentApi, setApi] = useState(null);
+
   return (
     <div className='api'>
       <div className='appBar'>
@@ -42,9 +45,9 @@ export default function API() {
             </Link>
           </div>
         </div>
-        <div item xs={10}>
+        <div>
           {dataEndpoints.map((api, index) => (
-            <section className='section' id={api.id}>
+            <section className='section' id={api.id} key={api.id}>
               <div style={{ width: "50%" }}>
                 {index === 0 && (
                   <div className='sectionWrapper'>
@@ -117,7 +120,13 @@ export default function API() {
                       <div style={{ position: "relative" }}>
                         <div className='exampleCodeWrapper'>
                           {api.type === "POST" && (
-                            <div className='viewMore'>
+                            <div
+                              className='viewMore'
+                              onClick={() => {
+                                setApi(api);
+                                setOpen(true);
+                              }}
+                            >
                               <div>View More</div>
                             </div>
                           )}
@@ -140,7 +149,7 @@ export default function API() {
                                   </span>{" "}
                                   \<br />
                                   {api.headers.map((header) => (
-                                    <>
+                                    <span key={header.name}>
                                       --header{" "}
                                       <span className='string'>
                                         '{header.name}:{" "}
@@ -148,17 +157,17 @@ export default function API() {
                                         '
                                       </span>{" "}
                                       \<br />
-                                    </>
+                                    </span>
                                   ))}
                                   {api.type === "POST" &&
                                     api.body.map((item) => (
-                                      <>
+                                      <span key={item.name}>
                                         --data-urlencode{" "}
                                         <span className='string'>
                                           '{item.name}={item.value}'
                                         </span>{" "}
                                         \<br />
-                                      </>
+                                      </span>
                                     ))}
                                 </code>
                               </pre>
@@ -174,6 +183,65 @@ export default function API() {
           ))}
         </div>
       </div>
+      <section
+        className='modalWindow'
+        style={{ visibility: open ? "visible" : "hidden" }}
+      >
+        {open && (
+          <div style={{ boxSizing: "border-box" }}>
+            <div style={{ display: "flex", padding: "8px 0px" }}>
+              <div className='exampleRequest'>Example Request</div>
+              <div className='exampleTitle'>{currentApi.title}</div>
+            </div>
+            <div style={{ position: "relative" }}>
+              <div
+                className='exampleCodeWrapper'
+                style={{ overflowY: "scroll" }}
+              >
+                <div style={{ maxHeight: "200px", height: "100%" }}>
+                  <div style={{ height: "100%" }}>
+                    <pre
+                      className='pre'
+                      style={{
+                        overflow:
+                          currentApi.type === "GET" ? "auto hidden" : "hidden",
+                      }}
+                    >
+                      <code className='code'>
+                        curl --location --request{" "}
+                        <span className='constant'>{currentApi.type}</span>{" "}
+                        <span className='string'>"{currentApi.endpoint}"</span>{" "}
+                        \
+                        <br />
+                        {currentApi.headers.map((header) => (
+                          <span key={header.name}>
+                            --header{" "}
+                            <span className='string'>
+                              '{header.name}:{" "}
+                              {header.value.split(/[\s,]+/).join(" ")}'
+                            </span>{" "}
+                            \<br />
+                          </span>
+                        ))}
+                        {currentApi.type === "POST" &&
+                          currentApi.body.map((item) => (
+                            <span key={item.name}>
+                              --data-urlencode{" "}
+                              <span className='string'>
+                                '{item.name}={item.value}'
+                              </span>{" "}
+                              \<br />
+                            </span>
+                          ))}
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
     </div>
   );
 }
