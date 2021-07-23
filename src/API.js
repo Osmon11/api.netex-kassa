@@ -316,12 +316,11 @@ const dataEndpoints = [
     id: "E01",
     type: "GET",
     title: "Get balance",
-    endpoint: "https://api.netex-kassa.com/api/v1.0/8282670/balance",
+    endpoint: "https://api.netex-kassa.com/api/v1.0/{{merchant_id}}/balance",
     headers: [
       {
         name: "Authorization",
-        value: `Bearer
-                VlptYWpEV2NTRHhvWVJXWDhRUXdUQXN0MmQxV0tUNjBqN3Z4SWdhek10RnlFcnBJVVRSeFoyb2pWZGtUUEZRRg==`,
+        value: `Bearer {{token}}`,
       },
     ],
   },
@@ -329,12 +328,12 @@ const dataEndpoints = [
     id: "E02",
     type: "GET",
     title: "Get available methods",
-    endpoint: "https://api.netex-kassa.com/api/v1.0/8282670/available-methods",
+    endpoint:
+      "https://api.netex-kassa.com/api/v1.0/{{merchant_id}}/available-methods",
     headers: [
       {
         name: "Authorization",
-        value: `Bearer
-                VlptYWpEV2NTRHhvWVJXWDhRUXdUQXN0MmQxV0tUNjBqN3Z4SWdhek10RnlFcnBJVVRSeFoyb2pWZGtUUEZRRg==`,
+        value: `Bearer {{token}}`,
       },
     ],
   },
@@ -342,12 +341,11 @@ const dataEndpoints = [
     id: "E03",
     type: "POST",
     title: "Create invoce",
-    endpoint: "https://api.netex-kassa.com/api/v1.0/8282670/invoice",
+    endpoint: "https://api.netex-kassa.com/api/v1.0/{{merchant_id}}/invoice",
     headers: [
       {
         name: "Authorization",
-        value: `Bearer
-                VlptYWpEV2NTRHhvWVJXWDhRUXdUQXN0MmQxV0tUNjBqN3Z4SWdhek10RnlFcnBJVVRSeFoyb2pWZGtUUEZRRg==`,
+        value: `Bearer {{token}}`,
       },
     ],
     body: [
@@ -389,12 +387,11 @@ const dataEndpoints = [
     id: "E04",
     type: "POST",
     title: "Get history",
-    endpoint: "https://api.netex-kassa.com/api/v1.0/8282670/history",
+    endpoint: "https://api.netex-kassa.com/api/v1.0/{{merchant_id}}/history",
     headers: [
       {
         name: "Authorization",
-        value: `Bearer
-                VlptYWpEV2NTRHhvWVJXWDhRUXdUQXN0MmQxV0tUNjBqN3Z4SWdhek10RnlFcnBJVVRSeFoyb2pWZGtUUEZRRg==`,
+        value: `Bearer {{token}}`,
       },
     ],
     body: [
